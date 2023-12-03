@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "adventofcode"
+version = "0.1.0"
+description = "Solutions to the Advent of Code challenges"
+authors = ["jdanml"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "scripts"}]
+
+
+[tool.poetry.scripts]
+aocrun = 'scripts.runner:app'
+init = 'scripts.init:main'
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = {extras = ["all"], version = "^0.9.0"}
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
