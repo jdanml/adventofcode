@@ -14,6 +14,7 @@ try:
 except ImportError:
     sys.exit("You need requests module. Install it by running pip install requests.")
 
+# Load the .env file
 load_dotenv(".env")
 
 # USER SPECIFIC PARAMETERS
