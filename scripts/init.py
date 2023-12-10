@@ -8,30 +8,30 @@
 import os
 import sys
 from distutils.util import strtobool
-from dotenv import load_dotenv
+from dotenv import dotenv_values
 try:
     import requests
 except ImportError:
     sys.exit("You need requests module. Install it by running pip install requests.")
 
 # Load the .env file
-load_dotenv(".env")
+config = dotenv_values(".env")
 
 # USER SPECIFIC PARAMETERS
-base_pos = os.getenv('base_pos')
-USER_SESSION_ID = os.getenv('USER_SESSION_ID')
-DOWNLOAD_STATEMENTS = strtobool(os.getenv('DOWNLOAD_STATEMENTS'))
-DOWNLOAD_INPUTS = strtobool(os.getenv('DOWNLOAD_INPUTS'))
-MAKE_CODE_TEMPLATE = strtobool(os.getenv('MAKE_CODE_TEMPLATE'))
-MAKE_URL = strtobool(os.getenv('MAKE_URL'))
-author = os.getenv('author')
-OVERWRITE = strtobool(os.getenv('OVERWRITE'))
+base_pos = config['BASE_POS']
+USER_SESSION_ID = config['USER_SESSION_ID']
+DOWNLOAD_STATEMENTS = strtobool(config['DOWNLOAD_STATEMENTS'])
+DOWNLOAD_INPUTS = strtobool(config['DOWNLOAD_INPUTS'])
+MAKE_CODE_TEMPLATE = strtobool(config['MAKE_CODE_TEMPLATE'])
+MAKE_URL = strtobool(config['MAKE_URL'])
+author = config['AUTHOR']
+OVERWRITE = strtobool(config['OVERWRITE'])
 
 # DATE SPECIFIC PARAMETERS
-date = os.getenv('date')
-starting_advent_of_code_year = int(os.getenv('starting_advent_of_code_year'))
-last_advent_of_code_year = int(os.getenv('last_advent_of_code_year'))
-last_advent_of_code_day = int(os.getenv('last_advent_of_code_day'))
+date = config['DATE']
+starting_advent_of_code_year = int(config['STARTING_ADVENT_OF_CODE_YEAR'])
+last_advent_of_code_year = int(config['LAST_ADVENT_OF_CODE_YEAR'])
+last_advent_of_code_day = int(config['LAST_ADVENT_OF_CODE_DAY'])
 
 def main():
     # Code
