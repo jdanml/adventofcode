@@ -5,7 +5,7 @@ import subprocess
 app = typer.Typer()
 
 def run_script(script_path):
-    subprocess.run(["python", script_path])
+    subprocess.run(["python", script_path], shell=True)
 
 @app.callback()
 def callback() -> None:
